@@ -1,1 +1,1 @@
-web: gunicorn src.app:app
+web: python resume_screening.py
