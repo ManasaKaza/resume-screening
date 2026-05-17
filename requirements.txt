@@ -1,25 +1,9 @@
-# Core web framework
-flask>=3.0.0,<4.0.0
-gunicorn>=22.0.0,<23.0.0
-waitress>=3.0.0,<4.0.0
-werkzeug>=3.0.0,<4.0.0
-
-# PDF extraction
-pymupdf>=1.25.0,<2.0.0
-
-# NLP
-spacy>=3.7.0,<3.8.0
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
-
-# BERT embeddings
-transformers>=4.40.0,<5.0.0
-torch>=2.3.0,<3.0.0
-
-# Similarity
-scikit-learn>=1.5.0,<2.0.0
-numpy>=1.26.0,<2.0.0
-
-# Visualisation
-wordcloud>=1.9.0,<2.0.0
-matplotlib>=3.9.0,<4.0.0
-Pillow>=10.0.0,<11.0.0
+streamlit
+sentence-transformers
+scikit-learn
+spacy
+pymupdf
+wordcloud
+matplotlib
+torch
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz

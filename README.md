@@ -1,53 +1,50 @@
-# Resume Screening Tool
+# AI Resume Screening Tool
 
-AI-powered resume screening tool that ranks uploaded resumes against a job description using **BERT semantic embeddings**, **skill-gap analysis**, and **word-cloud visualisations**.
+AI-powered resume screening application that ranks uploaded resumes against a job description using:
 
-## What it does
+- Semantic similarity (Sentence Transformers)
+- Skill-gap analysis
+- Resume ranking
+- Word-cloud visualisations
 
-Every results section **compares JD ↔ Resume**:
+Built with Streamlit, spaCy, and sentence-transformers.
 
-| Metric | How it works |
+---
+
+# Features
+
+## Resume ↔ Job Description Comparison
+
+Every uploaded resume is evaluated against the job description using:
+
+| Metric | Description |
 |--------|-------------|
-| **Overall Score** | Weighted combination (60% semantic + 40% skills) |
-| **Semantic Similarity** | BERT cosine similarity between JD and resume text |
-| **Skills Match %** | Percentage of JD-required skills found in the resume |
-| **Matched / Missing Skills** | Colour-coded tags showing which JD skills are present or absent |
-| **Word Clouds** | Side-by-side JD vs resume word clouds for visual comparison |
+| Overall Score | Weighted score (60% semantic similarity + 40% skill match) |
+| Semantic Similarity | AI embedding similarity between JD and resume |
+| Skills Match % | Percentage of JD skills found in the resume |
+| Missing Skills | Skills required in JD but absent in resume |
+| Word Clouds | Visual keyword comparison |
 
 ---
 
-## Project Structure
+# Tech Stack
 
-```
+- Python
+- Streamlit
+- Sentence Transformers
+- spaCy
+- PyMuPDF
+- scikit-learn
+- WordCloud
+
+---
+
+# Project Structure
+
+```text
 resume-screening/
-├── resume_screening.py   ← main Flask app
-├── requirements.txt      ← dependencies (including spaCy model)
-├── Procfile              ← for Heroku / Render (gunicorn)
-├── runtime.txt           ← Python version for deploy platforms
-├── .gitignore            ← excludes generated files
-├── uploads/              ← auto-created at runtime (cleaned after each request)
-└── static/               ← auto-created, stores word-cloud PNGs
-```
-
----
-
-## Prerequisites
-
-| Tool | Version |
-|------|---------|
-| Python | 3.10, 3.11, or 3.12 |
-| pip | latest |
-| Git | any |
-
----
-
-## How to Test
-
-1. Open http://127.0.0.1:5000
-2. Paste a job description (e.g. *"Python developer with machine learning, Docker, and AWS experience"*)
-3. Upload one or more `.pdf` or `.txt` résumé files
-4. Click **Screen Resumes**
-5. Results page shows for **each resume compared against the JD**:
-   - Overall / Semantic / Skills Match scores
-   - Matched skills (green) and missing skills (red)
-   - Side-by-side word clouds
+├── app.py                 ← main Streamlit application
+├── requirements.txt       ← dependencies
+├── runtime.txt            ← Python version
+├── README.md
+└── uploads/               ← temporary uploaded files
